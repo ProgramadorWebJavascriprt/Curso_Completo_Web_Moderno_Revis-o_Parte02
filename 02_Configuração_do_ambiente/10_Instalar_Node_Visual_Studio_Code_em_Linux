@@ -1,0 +1,81 @@
+Instalar Node e Visual Studio Code em Linux
+
+Fala, galera! Beleza?
+
+Viemos por meio desta aula-artigo atender aos pedidos de diversos alunos sobre a instalação das ferramentas do curso para o sistema operacional Linux. Vamos lá!
+Instalação do Node
+
+Recomenda-se a instalação do Node Version Manager (NVM). Para isso, temos duas opções:
+
+Instalação via CURL:
+
+    $ curl -o- <https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh> | bash
+
+Instalação via WGET:
+
+    $ wget -qO- <https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh> | bash
+
+A parte numérica do código é referente à versão do NVM, que pode mudar com o tempo. Então, recomenda-se acessar a página do projeto no GitHub antes da instalação.
+
+Após a instalação, reinicie sua máquina ou abra uma nova sessão do terminal para que seja possível usar o comando nvm.
+
+Agora, para conferir a versão do Node, digite no terminal:
+
+    nvm ls-remote
+
+Esse comando é usado caso queira instalar uma versão específica do Node.
+
+Para instalar a versão mais recente (latest), pode ser feito usando o comando:
+
+    nvm install --lts
+
+Existe a opção de instalar mais de uma opção, e você pode alternar entre estas utilizando o comando:
+
+    nvm use -número da versão-
+
+Agora, você pode conferir a versão do Node usando o comando node -v no terminal.
+
+Caso o NPM esteja desatualizado, a atualização pode ser feita através do comando npm i npm -g.
+Instalação do Visual Studio Code
+
+Para o Linux, existem duas opções de instalação: via Snap ou manualmente.
+
+A instalação via Snap é feita da seguinte maneira:
+
+    No terminal, digite:sudo snap install code –classic
+
+    Caso seja necessário atualizar, digite:sudo snap refresh code
+
+    Caso queira desinstalar, utilize o comando:sudo snap remove code
+
+A instalação manual é feita da seguinte maneira:
+
+    No terminal, digite:sudo rm -Rf /opt/vscode/*sudo rm -Rf /opt/vscode/codesudo rm -Rf /usr/share/applications/vscode.desktop
+
+    Para o próximo passo é necessário que você verifique se seu sistema é 32 ou 64 bits. Para isso, digite no terminal:
+
+    uname -m
+
+    Caso seja 32 bits, use esse comando para instalar o programa:wget *“*[<https://go.microsoft.com/fwlink/?LinkID=>](<https://go.microsoft.com/fwlink/?LinkID=620884>)[620885](<https://go.microsoft.com/fwlink/?LinkID=620885>)*” -O vscode.tar.gz*
+
+Se o link estiver desatualizado, acesse a página do Visual Studo Code, baixe a última versão e salve como vscode.tar.gz
+
+    Caso seja 64 bits, use esse comando para instalar o programa:wget *“*[<https://go.microsoft.com/fwlink/?LinkID=620884>](<https://go.microsoft.com/fwlink/?LinkID=620884>)*” -O vscode.tar.gz*
+
+Se o link estiver desatualizado, acesse a página Visual Studo Code, baixe a última versão e salve como vscode.tar.gz
+
+    Para descompactar o arquivo, use o comando:sudo tar -vzxf vscode.tar.gz -C /opt/
+
+    Renomeie o arquivo criado para deixar o nome em letras minúsculas:sudo mv /opt/VSCode*/ /opt/vscode/
+
+    Crie um atalho para facilitar a execução do programa:sudo ln -sf /opt/vscode/code /usr/bin/code
+
+Depois de instalado o Visual Studio, só resta instalar a extensão CodeRunner para rodar os códigos, e você pode encontrá-la nas Extensions do VSCode, como mostra a imagem abaixo:
+
+E é isto! Com isso seu Linux vai estar preparado para rodar os códigos da aula corretamente.
+
+Bons estudos!
+
+
+
+
